@@ -1,0 +1,4 @@
+services:
+#    crowd_founding.example:
+#        class: Crowd\FoundingBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
