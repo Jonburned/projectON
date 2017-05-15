@@ -1,0 +1,33 @@
+@media (max-width: 1024px) {
+    .navbar-header {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar .brand {
+        float: none;
+
+    }
+
+    .form-subscribe .btn {
+        margin-top: 10px;
+        background: #2782ff;
+    }
+}
+@media (max-width: 360px) {
+    .day-project h1 {
+        color: #475168;
+        font-size: 15px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .day-project p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .footer {
+        padding-left: 30px;
+    }
+}
