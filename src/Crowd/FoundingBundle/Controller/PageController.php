@@ -11,4 +11,14 @@ class PageController extends Controller
     {
         return $this->render('CrowdFoundingBundle:Page:index.html.twig');
     }
+
+    public function categoryAction()
+    {
+        return $this->render('CrowdFoundingBundle:Page:category.html.twig');
+    }
+
+    public function projectAction()
+    {
+        return $this->render('CrowdFoundingBundle:Page:project.html.twig');
+    }
 }

@@ -1,88 +1,122 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <title>ProjectON-{% block title %}Головна{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+        <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
+        <link href="{{ asset('css/style-responsive.css') }}" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
         {% block stylesheets %}
         {% endblock %}
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lora" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}"/>
-        <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/style-responsive.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/parallax-slider.css') }}" />
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery-ui.main.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/tabs.js') }}"></script>
+        {% block javascript %}
+        {% endblock %}
     </head>
     <body>
-    <header class="page-header">
-        <div class="navbar container">
-            <div class="navbar-header">
-                <a class="navbar brand" href="{{ path('crowd_founding_homepage') }}"><p>Включи свою ідею</p>Project<span>ON</span></a>
+    <div class="top-banner">
+        <div class="header">
+            <div class="container">
+
             </div>
         </div>
-    </header>
-        {% block body %}
+    </div>
+    <div class="top-header">
+        <div class="container">
+            <div class="logo">
+                <p>Включи свою ідею</p>
+                <h1><a href="#">Project<span>ON</span></a></h1>
+            </div>
+            <div class="top-menu">
+                <nav class="cl-effect-1">
+                    <span class="menu"><img src="{{ asset('images/menu.png') }}" alt=""/></span>
+                    <ul>
+                        <li><a href="#">Категорії</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Реєстрація</a></li>
+                        <li><a href="#">Увійти</a></li>
+                    </ul>
+                    <script>
+                        $("span.menu").click(function(){
+                            $(".top-menu ul").slideToggle("slow" , function(){
+                            });
+                        });
+                    </script>
+                </nav>
+            </div>
+        </div>
+    </div>
+    {% block body %}
 
         {% endblock %}
-    <footer class="footer">
+    <div class="footer">
         <div class="container">
-            <div class="row-fluid">
-                <div class="span4">
-                    <div class="row">
-                        <div class="footer-logo">
-                            <a href="{{ path('crowd_founding_homepage') }}"><p class="logo">Включи свою ідею</p><h1>Project<span>ON</span></h1></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="footer-developers">
-                        <h4>Розробники</h4>
-                        <p>Володимир Багрій - дизайн</p>
-                        <p>Олексій Шамуратов - програмування</p>
-                        <p>Дмитро Бровко - програмування</p>
-                        </div>
+            <div class="col-sm-4 mar-b-40">
+                <div class="footer-logo">
+                    <p>Включи свою ідею</p>
+                    <h1><a href="#">Project<span>ON</span></a></h1>
+                    <div class="copywrite">
+                        <p>© 2017-2018 Всі права захищені</p>
                     </div>
                 </div>
-                <div class="span4">
-                    <div class="footer-info">
+                <div class="developers">
+                    <h3>Розробники</h3>
+                    <nav class="cl-effect-1">
+                        <ul>
+                            <li><a href="#">Багрій В. - дизайн</a></li>
+                            <li><a href="#">Шамуратов О. - програмування</a></li>
+                            <li><a href="#">Бровко Д. - програмування</a></li>
+                        </ul>
+                        <script>
+                            $(ul).slideToggle("slow" , function(){
+                            });
+                        </script>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-sm-4 mar-b-40">
+                <div class="info">
                     <h3>Інформація</h3>
-                    <ul>
-                        <li><a href="#">Як це працює?</a></li>
-                        <li><a href="#">Про нас</a></li>
-                        <li><a href="#">Політика конфединційності</a></li>
-                        <li><a href="#">Категорії</a></li>
-                        <li><a href="#">Питання/Відповідь</a></li>
-                    </ul>
-                    </div>
+                    <nav class="cl-effect-1">
+                        <ul>
+                            <li><a href="#">Як це працює?</a></li>
+                            <li><a href="#">Про нас</a></li>
+                            <li><a href="#">Політика конфединційності</a></li>
+                            <li><a href="#">Питання/Відповідь</a></li>
+                        </ul>
+                        <script>
+                            $(ul).slideToggle("slow" , function(){
+                            });
+                        </script>
+                    </nav>
                 </div>
-                <div class="span4">
+            </div>
+            <div class="col-sm-4 mar-b-40">
+                <div class="feedback">
                     <h3>Зворотній зв'язок</h3>
+                    <form>
+                        <input type="text" placeholder="Ім'я">
+                        <input type="email" placeholder="Email адреса">
+                        <textarea rows="5" placeholder="Повідомлення..."></textarea>
+                        <button type="submit">Надіслати</button>
+                    </form>
                 </div>
-            </>
+            </div>
         </div>
-    </footer>
-    <script src="{{ asset('js/jquery-1.8.3.min.js') }}">
-    </script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}">
-    </script>
-    <script type="text/javascript" src="{{ asset('js/parallax-slider/modernizr.custom.28468.js') }}">
-    </script>
-
-    <script type="text/javascript" src="{{ asset('js/parallax-slider/jquery.cslider.js') }}">
-    </script>
+    </div>
+    <script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
     <script type="text/javascript">
-        $(function() {
-
-            $('#da-slider').cslider({
-                autoplay    : true,
-                bgincrement : 100
-            });
-
+        $(document).ready(function() {
+            $().UItoTop({ easingType: 'easeOutQuart' });
         });
     </script>
-        {% block javascripts %}
-        {% endblock %}
+    <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     </body>
 </html>

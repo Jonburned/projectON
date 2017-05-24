@@ -1,431 +1,357 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-    <div id="da-slider" class="da-slider">
-        <div class="da-slide">
-                <div class="row">
-                    <div class="span4">
-                        <h2>
-                            <i>Є ідея?</i>
-                            <br>
-                            <i>Включи її на</i>
-                            <br>
-                            <i>ProjectON</i>
-                        </h2>
-                        <p>
-                            <i>Не придумав</i>
-                            <br />
-                            <i>текст</i>
-                        </p>
-                        <a href="#" class="btn btn-info btn-lg da-link">
-                            Додати проект
-                        </a>
-                    </div>
-                </div>
-        </div>
-
-
-        <div class="da-slide">
-                <div class="row">
-                    <div class="span4">
-                        <h2>
-                            <i>Заголовок</i>
-                        </h2>
-                        <p>
-                            <i>Текст</i>
-                        </p>
-                    </div>
-                </div>
-        </div>
-
-
-        <div class="da-slide">
-                <div class="row">
-                    <div class="span4">
-                        <h2>
-                            <i>Заголовок</i>
-                        </h2>
-                        <p>
-                            <i>Текст</i>
-                        </p>
-                    </div>
-                </div>
-        </div>
-
-        <nav class="da-arrows">
-        <span class="da-arrows-prev">
-        </span>
-            <span class="da-arrows-next">
-        </span>
-        </nav>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="text-center span12">
-                <div class="message-head">
-                    <h1>
-                        Project<span>ON</span> - краудфандинг в Україні
-                    </h1>
-
-                </div>
-                <div class="message-box">
-                        <p class="text-center">
-                            Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                            Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                            Стань співзасновником добрих справ - підтримай коштами кращі проекти.
-                        </p>
-                </div>
+    <div class="banner">
+        <div class="container">
+            <div class="banner-info">
+                <h2>Є ідея?</h2>
+                <h3>Включи її на Project<span>ON</span>!</h3>
+                <a href="#">Додати проект</a>
             </div>
         </div>
     </div>
-
-    <div class="container mar-b-50">
-    <div class="row">
-        <div class="span12">
-            <div class="tabbable tabs-right">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#economy" data-toggle="tab">Економіка</a></li>
-                    <li><a href="#literature" data-toggle="tab">Література</a></li>
-                    <li><a href="#music" data-toggle="tab">Музика</a></li>
-                    <li><a href="#video" data-toggle="tab">Відео</a></li>
-                    <li><a href="#internet" data-toggle="tab">Інтернет</a></li>
-                    <li><a href="#technology" data-toggle="tab">Технології</a></li>
-                    <li><a href="#health" data-toggle="tab">Здоров'я</a></li>
-                    <li><a href="#sport" data-toggle="tab">Спорт</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="economy">
-                        <div class="day-project">
-                            <div class="text-right"><a href="#"><i>Всі проекти категорії</i></a></div>
-                        <div class="row-fluid">
-                            <div class="span6 hidden-phone">
-                                <h1>Проект дня: Економіка</h1>
-                                <img src="{{ asset('img/photo.png') }}" alt="Упс... Картинка не найдена">
-                            </div>
-                            <div class="span6 hidden-phone">
-                                <h4 class="text-left">Документальний фільм "Міф"</h4>
-                                <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.</p>
-                                <div class="progress">
-                                    <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                                        <p class="text-center">49%</p>
-                                    </div>
-                                </div>
-                                <div class="span3  text-center">
-                                    <p>&#8372;13.466 зібрано</p>
-                                </div>
-                                <div class="span3 offset1 text-center">
-                                    <p>532 доброчинців</p>
-                                </div>
-                                <div class="span3 offset1 text-center">
-                                    <p>7 днів до закінчення</p>
-                                </div>
-                            </div>
-                            <div class="span6 visible-phone">
-                                <h4 class="text-left">Документальний фільм "Міф"</h4>
-                                <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                </p>
-                                <div class="progress">
-                                    <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                                        <p class="text-center">49%</p>
-                                    </div>
-                                </div>
-                                <div class="span3  text-center">
-                                    <p>&#8372;13.466 зібрано</p>
-                                </div>
-                                <div class="span3 offset1 text-center">
-                                    <p>532 доброчинців</p>
-                                </div>
-                                <div class="span3 offset1 text-center">
-                                    <p>7 днів до закінчення</p>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="literature">
-                        <p>Розділ література</p>
-                    </div>
-                    <div class="tab-pane" id="music">
-                        <p>Розділ music</p>
-                    </div>
-                    <div class="tab-pane" id="video">
-                        <p>Розділ video</p>
-                    </div>
-                    <div class="tab-pane" id="internet">
-                        <p>Розділ internet</p>
-                    </div>
-                    <div class="tab-pane" id="technology">
-                        <p>Розділ technology</p>
-                    </div>
-                    <div class="tab-pane" id="health">
-                        <p>Розділ health</p>
-                    </div>
-                    <div class="tab-pane" id="sport">
-                        <p>Розділ sport</p>
-                    </div>
-                </div>
+    <!---->
+    <div class="message-section">
+        <div class="container">
+            <div class="col-md-12">
+                <h1>
+                    Project<span>ON</span> - краудфандинг в Україні
+                </h1>
+                <p>
+                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
+                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                    Стань співзасновником добрих справ - підтримай коштами кращі проекти.
+                </p>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
+    <!---->
+    <div class="container mar-b-60">
+        <div class="tabs-right">
+            <ul>
+                <li class="tab_selected"><a href="#economy-right">Економіка</a></li>
+                <li><a href="#literature-right">Література</a></li>
+                <li><a href="#music-right">Музика</a></li>
+                <li><a href="#video-right">Відео</a></li>
+                <li><a href="#internet-right">Інтернет</a></li>
+                <li><a href="#technology-right">Технології</a></li>
+                <li><a href="#health-right">Здоров'я</a></li>
+                <li><a href="#sport-right">Спорт</a></li>
+                <li><a href="#other-right">Інше</a></li>
+            </ul>
+            <div class="content_holder">
+                <div id="economy-right">
+                    <div class="row">
+                        <div class="text-right"><a href="#"><i>Всі проекти категорії</i></a></div>
+                        <div class="col-sm-6">
+                            <h2>Проект дня: Економіка</h2>
+                            <img src="images/photo.png" >
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>Документальний фільм "Міф"</h3>
+                            <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект. Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                    100.000/120.000
+                                </div>
+                            </div>
+                            <ul>
+                                <li><p>&#8372;100.000</p><p>зібрано</p></li>
+                                <li><p>532</p><p>доброчинців</p></li>
+                                <li><p>7 днів до</p><p>закінчення</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="literature-right">
+                    Some content tab 2
+                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект. Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше. Стань співзасновником добрих справ - підтримай коштами кращі проекти.</p>
+                </div>
+                <div id="music-right">
+                    Some content tab 3
+                </div>
+                <div id="video-right">
+                    Some content tab 4
+                </div>
+                <div id="internet-right">
+                    Some content tab 5
+                </div>
+                <div id="technology-right">
+                    Some content tab 6
+                </div>
+                <div id="health-right">
+                    Some content tab 7
+                </div>
+                <div id="sport-right">
+                    Some content tab 8
+                </div>
+                <div id="other-right">
+                    Some content tab 9
+                </div>
+            </div><!-- /.content_holder -->
+        </div><!-- /.tabs_holder -->
+        <script type="text/javascript" src="js/tabs.js"></script>
+        <script type="text/javascript">
+            $('.tabs-right').skinableTabs({
+                effect: 'fade_slide_up',
+                skin: 'skin10',
+                position: 'right'
+            });
+        </script>
     </div>
 
     <div class="subscribe mar-b-50">
         <div class="container">
-    <div class="row-fluid">
-        <div class="span5 text-center">
-            <p>
-                Дізнавайся про нові проекти та можливості першим
-            </p>
-        </div>
-        <div class="span5 offset2 text-center">
-            <form class="form-subscribe">
-                <input type="text" placeholder="Ваш надійний e-mail">
-                <button type="submit" class="btn">Підписатись</button>
-            </form>
-        </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="container mar-b-50">
-        <div class="row">
-            <div class="top-projects">
-                <h2>
-                    Популярні проекти
-                </h2>
-                <p>[Кількість] проектів чекають на Вашу підтримку</p>
-            </div>
-            <div class="span4 mar-b-30">
-                <div class="thumbnail">
-                    <div class="project-continer">
-                    <img src="{{ asset('img/photo.png') }}" alt="">
-                    <div class="caption">
-                        <h4>
-                            Проект №1
-                        </h4>
-                        <p>
-                            Опис
-                        </p>
-                    </div>
-                    </div>
-                    <div class="progress">
-                        <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                            <p class="text-center">49%</p>
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="project-progress">
-                    <div class="span3 text-center">
-                        <p>&#8372;13.466 зібрано</p>
-                    </div>
-                    <div class="span3 text-center">
-                        <p>532 доброчинців</p>
-                    </div>
-                    <div class="span3 offset1 text-center">
-                        <p>7 днів залишилось</p>
-                    </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="span4 mar-b-30">
-            <div class="thumbnail">
-                <div class="project-continer">
-                    <img src="{{ asset('img/photo.png') }}" alt="">
-                    <div class="caption">
-                        <h4>
-                            Проект №2
-                        </h4>
-                        <p>
-                            Опис
-                        </p>
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                        <p class="text-center">49%</p>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="project-progress">
-                        <div class="span3 text-center">
-                            <p>&#8372;13.466 зібрано</p>
-                        </div>
-                        <div class="span3 text-center">
-                            <p>532 доброчинців</p>
-                        </div>
-                        <div class="span3 offset1 text-center">
-                            <p>7 днів залишилось</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="span4 mar-b-30">
-                <div class="thumbnail">
-                    <div class="project-continer">
-                        <img src="{{ asset('img/photo.png') }}" alt="">
-                        <div class="caption">
-                            <h4>
-                                Проект №3
-                            </h4>
-                            <p>
-                                Опис
-                            </p>
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                            <p class="text-center">49%</p>
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="project-progress">
-                            <div class="span3 text-center">
-                                <p>&#8372;13.466 зібрано</p>
-                            </div>
-                            <div class="span3 text-center">
-                                <p>532 доброчинців</p>
-                            </div>
-                            <div class="span3 offset1 text-center">
-                                <p>7 днів залишилось</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="span4 mar-b-30">
-                <div class="thumbnail">
-                    <div class="project-continer">
-                        <img src="{{ asset('img/photo.png') }}" alt="">
-                        <div class="caption">
-                            <h4>
-                                Проект №4
-                            </h4>
-                            <p>
-                                Опис
-                            </p>
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                            <p class="text-center">49%</p>
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="project-progress">
-                            <div class="span3 text-center">
-                                <p>&#8372;13.466 зібрано</p>
-                            </div>
-                            <div class="span3 text-center">
-                                <p>532 доброчинців</p>
-                            </div>
-                            <div class="span3 offset1 text-center">
-                                <p>7 днів залишилось</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="span4 mar-b-30">
-                <div class="thumbnail">
-                    <div class="project-continer">
-                        <img src="{{ asset('img/photo.png') }}" alt="">
-                        <div class="caption">
-                            <h4>
-                                Проект №5
-                            </h4>
-                            <p>
-                                Опис
-                            </p>
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                            <p class="text-center">49%</p>
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="project-progress">
-                            <div class="span3 text-center">
-                                <p>&#8372;13.466 зібрано</p>
-                            </div>
-                            <div class="span3 text-center">
-                                <p>532 доброчинців</p>
-                            </div>
-                            <div class="span3 offset1 text-center">
-                                <p>7 днів залишилось</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="span4 mar-b-30">
-                <div class="thumbnail">
-                    <div class="project-continer">
-                        <img src="{{ asset('img/photo.png') }}" alt="">
-                        <div class="caption">
-                            <h4>
-                                Проект №6
-                            </h4>
-                            <p>
-                                Опис
-                            </p>
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="bar-info progress-info" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 59%">
-                            <p class="text-center">49%</p>
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="project-progress">
-                            <div class="span3 text-center">
-                                <p>&#8372;13.466 зібрано</p>
-                            </div>
-                            <div class="span3 text-center">
-                                <p>532 доброчинців</p>
-                            </div>
-                            <div class="span3 offset1 text-center">
-                                <p>7 днів залишилось</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-            <a href="#" class="btn btn-more ">
-                Більше
-            </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mar-b-20">
-        <div class="row">
-            <div class="text-center span12">
-                <div class="message-head">
-                    <h1>
-                        Як зібрати гроші на проект?
-                    </h1>
-                </div>
-                <div class="message-box">
-                    <p class="text-center">
-                        Подаються не просто ідеї, що хочуть зробити світ кращим, а добре продумані ініціативи від дієвих громадян.
-                    </p>
-                    <p class="text-center">
-                        Основна складова успіху краудфандинг-кампанії - відповідальність автора проекту.
-                        Щоб зібрати гроші, автор має врахувати інтереси зацікавлених сторін: доброчинців, менторів та партнерів.
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <p>
+                        Дізнавайся про нові проекти та можливості першим
                     </p>
                 </div>
-                <a href="#" class="btn btn-add ">
-                    ДОДАТИ ПРОЕКТ
-                </a>
+                <div class="col-md-8 text-center">
+                    <div class="form-subscribe">
+                        <form>
+                            <input type="email" placeholder="Ваш надійний e-mail">
+                            <button type="submit">Підписатись</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {% block javascripts %}
+    <div class="container">
+        <div class="tabs-top">
+            <ul>
+                <li class="tab_selected"><a href="#all">Всі категорії<span>16</span></a></li>
+                <li><a href="#economy">Економіка<span>16</span></a></li>
+                <li><a href="#literature">Література<span>16</span></a></li>
+                <li><a href="#music">Музика<span>16</span></a></li>
+                <li><a href="#video">Відео<span>16</span></a></li>
+                <li><a href="#internet">Інтернет<span>16</span></a></li>
+                <li><a href="#technology">Технології<span>16</span></a></li>
+                <li><a href="#health">Здоров'я<span>16</span></a></li>
+                <li><a href="#sport">Спорт<span>16</span></a></li>
+                <li><a href="#other">Інше<span>16</span></a></li>
+            </ul>
+            <div class="content_holder">
+                <div id="all">
+                    <ul class="thumbnail-projects">
+                        <li class="col-sm-4">
+                            <div class="thumbnail thumbnail-project">
+                                <div class="project-caption">
+                                <img src="images/photo-test.png" alt="">
+                                <h4>Гартівня нащадків козацького роду</h4>
+                                <p>
+                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
+                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                                    Стань співзасновником добрих справ - підтримай коштами.
+                                </p>
+                                </div>
+                                <div class="thumb-info">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                            100.000/120.000
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
+                                        <li><p>532</p><p>доброчинців</p></li>
+                                        <li><p>7 днів до</p><p>закінчення</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-sm-4">
+                            <div class="thumbnail thumbnail-project">
+                                <div class="project-caption">
+                                <img src="images/photo.png" alt="">
+                                <h4>Гартівня нащадків козацького роду</h4>
+                                <p>
+                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
 
-    {% endblock %}
+                                </p>
+                                </div>
+                                <div class="thumb-info">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                            100.000/120.000
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
+                                        <li><p>532</p><p>доброчинців</p></li>
+                                        <li><p>7 днів до</p><p>закінчення</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-sm-4">
+                            <div class="thumbnail thumbnail-project">
+                                <div class="project-caption">
+                                <img src="images/photo.png" alt="">
+                                <h4>Гартівня нащадків козацького роду</h4>
+                                <p>
+                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                                    Стань співзасновником добрих справ - підтримай коштами кращі проекти.
+                                </p>
+                                </div>
+                                <div class="thumb-info">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                            100.000/120.000
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
+                                        <li><p>532</p><p>доброчинців</p></li>
+                                        <li><p>7 днів до</p><p>закінчення</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-sm-4">
+                            <div class="thumbnail thumbnail-project">
+                                <div class="project-caption">
+                                <img src="images/photo.png" alt="">
+                                <h4>Гартівня нащадків козацького роду</h4>
+                                <p>
+                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
+                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                                    Стань співзасновником добрих справ - підтримай коштами.
+                                </p>
+                                </div>
+                                <div class="thumb-info">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                            100.000/120.000
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
+                                        <li><p>532</p><p>доброчинців</p></li>
+                                        <li><p>7 днів до</p><p>закінчення</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-sm-4">
+                            <div class="thumbnail thumbnail-project">
+                                <div class="project-caption">
+                                <img src="images/photo.png" alt="">
+                                <h4>Гартівня нащадків козацького роду</h4>
+                                <p>
+                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
+                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                                    Стань співзасновником добрих справ - підтримай коштами.
+                                </p>
+                                </div>
+                                <div class="thumb-info">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                            100.000/120.000
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
+                                        <li><p>532</p><p>доброчинців</p></li>
+                                        <li><p>Завершено</p><p>22.05.2017</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-sm-4">
+                            <div class="thumbnail thumbnail-project">
+                                <div class="project-caption">
+                                <img src="images/photo.png" alt="">
+                                <h4>Гартівня нащадків козацького роду</h4>
+                                <p>
+                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
+                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                                    Стань співзасновником добрих справ - підтримай коштами.
+                                </p>
+                                </div>
+                                <div class="thumb-info">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
+                                            100.000/120.000
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><p>&#8372;1.000.000</p><p>зібрано</p></li>
+                                        <li><p>532</p><p>доброчинців</p></li>
+                                        <li><p>100 днів</p><p>залишилось</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="text-center mar-b-10">
+                        <a href="#" class="btn-more ">
+                            Більше
+                        </a>
+                    </div>
+                </div>
+                <div id="economy">
+                    <p>Some content tab 1.</p>
+                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
+                        Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
+                        Стань співзасновником добрих справ - підтримай коштами.</p>
+                </div>
+                <div id="literature">
+                    Some content tab 2
+                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект. Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше. Стань співзасновником добрих справ - підтримай коштами.</p>
+                </div>
+                <div id="music">
+                    Some content tab 3
+                </div>
+                <div id="video">
+                    Some content tab 4
+                </div>
+                <div id="internet">
+                    Some content tab 5
+                </div>
+                <div id="technology">
+                    Some content tab 6
+                </div>
+                <div id="health">
+                    Some content tab 7
+                </div>
+                <div id="sport">
+                    Some content tab 8
+                </div>
+                <div id="other">
+                    Some content tab 9
+                </div>
+            </div><!-- /.content_holder -->
+        </div><!-- /.tabs_holder -->
+        <script type="text/javascript">
+            $('.tabs-top').skinableTabs({
+                effect: 'fade_slide_right',
+                skin: 'skin9',
+                position: 'top'
+            });
+        </script>
+    </div>
+
+    <div class="message-section text-center">
+        <div class="container">
+            <div class="col-md-12">
+                <h1>
+                    Як зібрати гроші на проект?
+                </h1>
+                <p>
+                    Подаютсья не просто ідеї, які зроблять світ краще, а добре продумані ініциативи від дієвих громадян.
+                    Основна складова успіху Вашого проекту - відповідальність автора. Щоб зібрати гроші на проект, автор має врахувати інтереси зацікавлених осіб:
+                    доброчинців, менторів та партнерів.
+                </p>
+                <div class="text-center">
+                    <a class="btn-add" href="#">Додати проект</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
 {% endblock %}

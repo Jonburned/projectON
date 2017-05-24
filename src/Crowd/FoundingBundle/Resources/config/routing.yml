@@ -1,3 +1,11 @@
 crowd_founding_homepage:
     path:     /
     defaults: { _controller: CrowdFoundingBundle:Page:index }
+
+crowd_founding_categorypage:
+    path: /category
+    defaults: { _controller: CrowdFoundingBundle:Page:category }
+
+crowd_founding_project:
+    path: /project
+    defaults: { _controller: CrowdFoundingBundle:Page:project }
