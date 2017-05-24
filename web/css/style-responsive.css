@@ -430,6 +430,11 @@
         display: block;
         margin: 0 auto;
     }
+    .skin10.right .tabs_header {
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
 
 @media (min-width: 660px) and (max-width: 740px){
