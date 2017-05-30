@@ -43,7 +43,7 @@
     src: local('Lora Regular'), local('Lora-Regular'), url('../fonts/4vqKRIwnQQGUQQh-PnvdMA.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
-
+.mar-b-0 {margin-bottom: 0!important;}
 .mar-b-10 { margin-bottom: 10px }
 .mar-b-20 { margin-bottom: 20px }
 .mar-b-30 { margin-bottom: 30px }
@@ -113,6 +113,13 @@ body img {
     -o-transition:0.5s all;
     -ms-transition:0.5s all;
 }
+body input {
+    -webkit-transition: width .55s ease;
+    -moz-transition: width .55s ease;
+    -ms-transition: width .55s ease;
+    -o-transition: width .55s ease;
+    transition: width .55s ease;
+}
 .row{
 	margin:0;
 }	
@@ -159,9 +166,28 @@ a#toTop{
 	transform: translateX(0px);
 }
 /*--menu--*/
-.header{
-    background:#d1d1d1;
-    padding:6px;
+.user-header{
+    text-align: right;
+    background:#FFFFFF;
+    padding-bottom:5px;
+    padding-top: 5px;
+}
+.user-header ul li {
+    list-style: none;
+    float: right;
+}
+.user-header ul li:nth-child(2){
+    margin-right:2em;
+}
+.user-header a {
+    color: #555656;
+    font-size: 1.1em;
+    outline:none;
+}
+.user-header a:hover {
+    color: #006cff;
+    background: transparent;
+    outline:none;
 }
 .top-header{
 	position:relative;
@@ -188,17 +214,16 @@ span.menu {
 	color:#006cff;
 }
 .top-menu input{
-    width: 50px;
+    width: 350px;
     height: 40px;
-    background: url(../images/search.png) no-repeat;
-    border: none;
+    background: url(../images/search.png) no-repeat 5px 5px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #555656;
+    padding-top: 0;
     font-size: 10pt;
     color: #555656;
-    -webkit-transition: width .55s ease;
-    -moz-transition: width .55s ease;
-    -ms-transition: width .55s ease;
-    -o-transition: width .55s ease;
-    transition: width .55s ease;
 }
 .top-menu input::-webkit-input-placeholder {
     color: #65737e;
@@ -216,23 +241,17 @@ span.menu {
     color: #65737e;
 }
 .top-menu input:focus, .top-menu input:active{
-    position: absolute;
     padding-left: 10px;
     background: #fff;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 1px solid #555656;
     outline:none;
-    width: 200px;
 }
 
 .top-menu ul li:nth-child(2){
-	margin-right:18em;
+	margin-right:20em;
 }
 .logo{
 	position: absolute;
-    left: 43%;
+    left: 40%;
     top: 5%;
 }
 .logo p {

@@ -4,6 +4,16 @@
         background-size: cover;
         min-height: 500px;
     }
+    .logo{
+        position: absolute;
+        left: 45%;
+    }
+}
+@media (min-width: 1600px) {
+    .logo{
+        position: absolute;
+        left: 44%;
+    }
 }
 @media (min-width: 1366px){
     .skin9.top .tab_header_item a {
@@ -19,11 +29,7 @@
         font-size: 1em;
         margin-left: 5%;
     }
-}
-@media (max-width: 1366px){
-    .logo{
-        left: 38%;
-    }
+
 }
 @media (max-width: 1280px){
     .logo {
@@ -52,7 +58,7 @@
 }
 @media (min-width: 1024px) and (max-width: 1024px) {
     .logo {
-        margin-left: 3%;
+        margin-left: 5%;
     }
     .skin10.right .content_holder img {
         display: block;
@@ -63,6 +69,12 @@
     }
     .skin10.right .content_holder li > p {
         font-size: 15px;
+    }
+    .top-menu ul li:nth-child(2) {
+        margin-right: 22em;
+    }
+    .top-menu input{
+        width: 250px;
     }
 }
 @media (max-width: 1080px){
@@ -97,6 +109,9 @@
     .thumbnail-project .thumb-info ul li {
         font-size: 0.9em;
         margin-left: 5%;
+    }
+    .top-menu input{
+        width: 250px;
     }
 }
 @media (max-width: 991px){
@@ -228,6 +243,7 @@
         margin:0;
     }
     .top-menu ul li a {
+        color:#fff;
         padding:12px 0;
         font-size: 1.2em;
         width: 100%;
@@ -242,6 +258,10 @@
         left: 0%;
         background:#333;
         padding: 10px 0;
+    }
+    .top-menu input:focus, .top-menu input:active{
+        background: none;
+        color: #FFFFFF;
     }
     .logo {
         left: 36%;
@@ -823,7 +843,7 @@
         font-size: 0.8em;
     }
     .logo p {
-        font-size:0.5em;
+        font-size:0.7em;
     }
     .banner-info {
         padding: 1em;

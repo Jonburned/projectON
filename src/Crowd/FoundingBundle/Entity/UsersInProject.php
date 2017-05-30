@@ -24,13 +24,13 @@ class UsersInProject
     protected $role;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="users")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="projects")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="projects")
+     * @ORM\ManyToOne(targetEntity="Project", inversedBy="users")
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
     protected $project;

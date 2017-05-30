@@ -29,6 +29,11 @@ class Benefits
     protected $minSum;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $description;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Project", inversedBy="benefits")
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */

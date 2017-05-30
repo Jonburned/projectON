@@ -6,7 +6,7 @@
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <title>ProjectON-{% block title %}Головна{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}" />
         <link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
         <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
         <link href="{{ asset('css/style-responsive.css') }}" rel='stylesheet' type='text/css' />
@@ -21,27 +21,28 @@
         {% endblock %}
     </head>
     <body>
-    <div class="top-banner">
-        <div class="header">
-            <div class="container">
-
-            </div>
+    <div class="container mar-b-0">
+        <div class="user-header">
+                {{include('@CrowdUser/layout.html.twig')}}
         </div>
     </div>
     <div class="top-header">
         <div class="container">
             <div class="logo">
                 <p>Включи свою ідею</p>
-                <h1><a href="#">Project<span>ON</span></a></h1>
+                <h1><a href="{{ path('crowd_founding_homepage') }}">Project<span>ON</span></a></h1>
             </div>
             <div class="top-menu">
                 <nav class="cl-effect-1">
                     <span class="menu"><img src="{{ asset('images/menu.png') }}" alt=""/></span>
                     <ul>
-                        <li><a href="#">Категорії</a></li>
-                        <li><a href="#">Про нас</a></li>
-                        <li><a href="#">Реєстрація</a></li>
-                        <li><a href="#">Увійти</a></li>
+                        <li><a href="{{ path('crowd_founding_categorypage') }}"><i class="fa fa-compass"></i> Категорії</a></li>
+                        <li><a href="">Про нас</a></li>
+                        <li>
+                            <form action="" method="post">
+                            <input title="Пошук" value="" type="search"/>
+                            </form>
+                        </li>
                     </ul>
                     <script>
                         $("span.menu").click(function(){
@@ -56,6 +57,7 @@
     {% block body %}
 
         {% endblock %}
+    {% block footer %}
     <div class="footer">
         <div class="container">
             <div class="col-sm-4 mar-b-40">
@@ -111,6 +113,7 @@
             </div>
         </div>
     </div>
+    {% endblock %}
     <script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {

@@ -2,6 +2,7 @@
 
 namespace Crowd\FoundingBundle\Entity;
 
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\HasLifecycleCallbacks
  */
 
-class User
+class User extends BaseUser
 {
     /**
      * @ORM\Id
@@ -49,16 +50,6 @@ class User
      * @ORM\Column(type="string")
      */
     protected $login;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $password;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $email;
 
     /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
