@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "22ce18b9e7323684d7f47d5347483a89",
+    "content-hash": "5ca7df9cb564fb6d6d6a281c3462bcc0",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -285,6 +285,65 @@
             "time": "2017-01-13T14:02:13+00:00"
         },
         {
+            "name": "doctrine/data-fixtures",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "c4c59a64e495e038992e63af683b9faefbea12c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/c4c59a64e495e038992e63af683b9faefbea12c3",
+                "reference": "c4c59a64e495e038992e63af683b9faefbea12c3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.2",
+                "php": "^5.6 || ^7.0"
+            },
+            "conflict": {
+                "doctrine/orm": "< 2.4"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.5.4",
+                "doctrine/orm": "^2.5.4",
+                "phpunit/phpunit": "^5.4.6"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\DataFixtures\\": "lib/Doctrine/Common/DataFixtures"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "time": "2017-05-28 02:49:26"
+        },
+        {
             "name": "doctrine/dbal",
             "version": "v2.5.12",
             "source": {
@@ -523,6 +582,63 @@
                 "caching"
             ],
             "time": "2016-01-26T17:28:51+00:00"
+        },
+        {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "561fb64d1d3b47673bdb13a0ac76f0003cf0eeef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/561fb64d1d3b47673bdb13a0ac76f0003cf0eeef",
+                "reference": "561fb64d1d3b47673bdb13a0ac76f0003cf0eeef",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "~1.0",
+                "doctrine/doctrine-bundle": "~1.0",
+                "php": ">=5.3.2",
+                "symfony/doctrine-bridge": "~2.3|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Bundle\\FixturesBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "http://www.doctrine-project.org"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "time": "2017-05-23 11:55:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -766,12 +882,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "c84f2ab852b8b91e8f791a8bf4b5a7c5be27d2d1"
+                "reference": "178c751cda47d34e0961615798c67db10903b17e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/c84f2ab852b8b91e8f791a8bf4b5a7c5be27d2d1",
-                "reference": "c84f2ab852b8b91e8f791a8bf4b5a7c5be27d2d1",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/178c751cda47d34e0961615798c67db10903b17e",
+                "reference": "178c751cda47d34e0961615798c67db10903b17e",
                 "shasum": ""
             },
             "require": {
@@ -832,7 +948,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2017-05-03 08:50:47"
+            "time": "2017-05-30 09:03:09"
         },
         {
             "name": "doctrine/orm",
@@ -909,73 +1025,6 @@
                 "orm"
             ],
             "time": "2016-12-18T15:42:34+00:00"
-        },
-        {
-            "name": "friendsofsymfony/user-bundle",
-            "version": "v1.3.7",
-            "target-dir": "FOS/UserBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "113cc4e48fac19d20fc039cfecae9b41103be706"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/113cc4e48fac19d20fc039cfecae9b41103be706",
-                "reference": "113cc4e48fac19d20fc039cfecae9b41103be706",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/security-bundle": "~2.3"
-            },
-            "require-dev": {
-                "doctrine/doctrine-bundle": "~1.3",
-                "swiftmailer/swiftmailer": "~4.3|~5",
-                "symfony/validator": "~2.3",
-                "symfony/yaml": "~2.3",
-                "twig/twig": "~1.5",
-                "willdurand/propel-typehintable-behavior": "~1.0"
-            },
-            "suggest": {
-                "willdurand/propel-typehintable-behavior": "Needed when using the propel implementation"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "FOS\\UserBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christophe Coevoet",
-                    "email": "stof@notk.org"
-                },
-                {
-                    "name": "FriendsOfSymfony Community",
-                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
-                },
-                {
-                    "name": "Thibault Duplessis",
-                    "email": "thibault.duplessis@gmail.com"
-                }
-            ],
-            "description": "Symfony FOSUserBundle",
-            "homepage": "http://friendsofsymfony.github.com",
-            "keywords": [
-                "User management"
-            ],
-            "time": "2016-08-12T09:53:32+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2364,16 +2413,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.20",
+            "version": "v2.8.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "bbe1eae0c213e45da9fb0c6abb43aff415a3dcdd"
+                "reference": "17002cbb4be8b3b0d6516defe4ed839ad459994b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/bbe1eae0c213e45da9fb0c6abb43aff415a3dcdd",
-                "reference": "bbe1eae0c213e45da9fb0c6abb43aff415a3dcdd",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/17002cbb4be8b3b0d6516defe4ed839ad459994b",
+                "reference": "17002cbb4be8b3b0d6516defe4ed839ad459994b",
                 "shasum": ""
             },
             "require": {
@@ -2497,7 +2546,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-05-01T16:14:31+00:00"
+            "time": "2017-05-29T19:15:13+00:00"
         },
         {
             "name": "twig/twig",
@@ -2725,16 +2774,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v2.8.20",
+            "version": "v2.8.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "b0a7230649affaa40960ac7dd47d2a88f2886afb"
+                "reference": "34bfa4fe0439440323aab0982a77246b6b6dfd83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/b0a7230649affaa40960ac7dd47d2a88f2886afb",
-                "reference": "b0a7230649affaa40960ac7dd47d2a88f2886afb",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/34bfa4fe0439440323aab0982a77246b6b6dfd83",
+                "reference": "34bfa4fe0439440323aab0982a77246b6b6dfd83",
                 "shasum": ""
             },
             "require": {
@@ -2779,14 +2828,16 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12T14:07:15+00:00"
+            "time": "2017-05-21T09:46:38+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/doctrine-migrations-bundle": 20,
-        "doctrine/migrations": 20
+        "doctrine/migrations": 20,
+        "doctrine/doctrine-fixtures-bundle": 20,
+        "doctrine/data-fixtures": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -3,9 +3,10 @@
 namespace Crowd\FoundingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Crowd\FoundingBundle\Entity\Repository\BenefitsRepository")
  * @ORM\Table(name="Benefits")
  */
 

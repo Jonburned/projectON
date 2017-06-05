@@ -1,10 +1,12 @@
 <?php
 
 namespace Crowd\FoundingBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Crowd\FoundingBundle\Entity\Repository\NewsRepository")
  * @ORM\Table(name="News")
  * @ORM\HasLifecycleCallbacks
  */

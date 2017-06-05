@@ -2,17 +2,16 @@
 
 namespace Crowd\FoundingBundle\Entity;
 
-use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Crowd\FoundingBundle\Entity\Repository\UserRepository")
  * @ORM\Table(name="User")
  * @ORM\HasLifecycleCallbacks
  */
 
-class User extends BaseUser
+class User
 {
     /**
      * @ORM\Id
@@ -22,12 +21,12 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $surname;
 
@@ -37,19 +36,14 @@ class User extends BaseUser
     protected $regDate;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $description;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $userPhoto;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $login;
 
     /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
@@ -175,22 +169,6 @@ class User extends BaseUser
     public function setUserPhoto($userPhoto)
     {
         $this->userPhoto = $userPhoto;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * @param mixed $login
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
     }
 
     /**
