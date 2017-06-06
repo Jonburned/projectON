@@ -9,7 +9,10 @@ class PageController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('CrowdFoundingBundle:Page:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('CrowdFoundingBundle:Category')->findAll();
+
+        return $this->render('CrowdFoundingBundle:Page:index.html.twig', array('categories' => $categories));
     }
 
     public function categoryAction()

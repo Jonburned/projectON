@@ -28,28 +28,21 @@
     </div>
     <!---->
     <div class="container mar-b-60">
+        {% if categories is defined and categories|length > 0 %}
         <div class="tabs-right">
             <ul>
-                <li class="tab_selected"><a href="#economy-right">Економіка</a></li>
-                <li><a href="#literature-right">Література</a></li>
-                <li><a href="#music-right">Музика</a></li>
-                <li><a href="#video-right">Відео</a></li>
-                <li><a href="#art-right">Мистецтво</a></li>
-                <li><a href="#education-right">Освіта</a></li>
-                <li><a href="#children-right">Діти</a></li>
-                <li><a href="#ecology-right">Екологія</a></li>
-                <li><a href="#internet-right">Інтернет</a></li>
-                <li><a href="#technology-right">Технології</a></li>
-                <li><a href="#health-right">Здоров'я</a></li>
-                <li><a href="#sport-right">Спорт</a></li>
-                <li><a href="#other-right">Інше</a></li>
+
+                    {% for category in categories %}
+                        <li><a href="#{{ category.page }}-right">{{ category.name }}</a></li>
+                    {% endfor %}
             </ul>
             <div class="content_holder">
-                <div id="economy-right">
+                {% for category in categories %}
+                <div id="{{ category.page }}-right">
                     <div class="row">
                         <div class="text-right"><a href="#"><i>Всі проекти категорії</i></a></div>
                         <div class="col-sm-6">
-                            <h2>Проект дня: Економіка</h2>
+                            <h2>Проект дня: {{ category.name }}</h2>
                             <img src="images/photo.png" >
                         </div>
                         <div class="col-sm-6">
@@ -70,45 +63,9 @@
                         </div>
                     </div>
                 </div>
-                <div id="literature-right">
-                    Some content tab 2
-                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект. Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше. Стань співзасновником добрих справ - підтримай коштами кращі проекти.</p>
-                </div>
-                <div id="music-right">
-                    Some content tab 3
-                </div>
-                <div id="video-right">
-                    Some content tab 4
-                </div>
-                <div id="art-right">
-                    Some content tab 4
-                </div>
-                <div id="education-right">
-                    Some content tab 4
-                </div>
-                <div id="children-right">
-                    Some content tab 4
-                </div>
-                <div id="ecology-right">
-                    Some content tab 4
-                </div>
-                <div id="internet-right">
-                    Some content tab 5
-                </div>
-                <div id="technology-right">
-                    Some content tab 6
-                </div>
-                <div id="health-right">
-                    Some content tab 7
-                </div>
-                <div id="sport-right">
-                    Some content tab 8
-                </div>
-                <div id="other-right">
-                    Some content tab 9
-                </div>
-            </div><!-- /.content_holder -->
-        </div><!-- /.tabs_holder -->
+                {% endfor %}
+            </div>
+        </div>
         <script type="text/javascript" src="js/tabs.js"></script>
         <script type="text/javascript">
             $('.tabs-right').skinableTabs({
@@ -117,6 +74,9 @@
                 position: 'right'
             });
         </script>
+    {% else %}
+        <p>Не знайдено категорії</p>
+    {% endif %}
     </div>
 
     <div class="subscribe mar-b-50">
@@ -142,15 +102,9 @@
         <div class="tabs-top">
             <ul>
                 <li class="tab_selected"><a href="#all">Всі категорії<span>16</span></a></li>
-                <li><a href="#economy">Економіка<span>16</span></a></li>
-                <li><a href="#literature">Література<span>16</span></a></li>
-                <li><a href="#music">Музика<span>16</span></a></li>
-                <li><a href="#video">Відео<span>16</span></a></li>
-                <li><a href="#internet">Інтернет<span>16</span></a></li>
-                <li><a href="#technology">Технології<span>16</span></a></li>
-                <li><a href="#health">Здоров'я<span>16</span></a></li>
-                <li><a href="#sport">Спорт<span>16</span></a></li>
-                <li><a href="#other">Інше<span>16</span></a></li>
+                {% for category in categories %}
+                    <li><a href="#{{ category.page }}">{{ category.name }}</a></li>
+                {% endfor %}
             </ul>
             <div class="content_holder">
                 <div id="all">
@@ -310,37 +264,11 @@
                         </a>
                     </div>
                 </div>
-                <div id="economy">
-                    <p>Some content tab 1.</p>
-                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                        Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                        Стань співзасновником добрих справ - підтримай коштами.</p>
-                </div>
-                <div id="literature">
-                    Some content tab 2
-                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект. Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше. Стань співзасновником добрих справ - підтримай коштами.</p>
-                </div>
-                <div id="music">
-                    Some content tab 3
-                </div>
-                <div id="video">
-                    Some content tab 4
-                </div>
-                <div id="internet">
-                    Some content tab 5
-                </div>
-                <div id="technology">
-                    Some content tab 6
-                </div>
-                <div id="health">
-                    Some content tab 7
-                </div>
-                <div id="sport">
-                    Some content tab 8
-                </div>
-                <div id="other">
-                    Some content tab 9
-                </div>
+                {% for category in categories %}
+                    <div id="{{ category.page }}">
+                        <p>{{ category.name }}</p>
+                    </div>
+                    {% endfor %}
             </div><!-- /.content_holder -->
         </div><!-- /.tabs_holder -->
         <script type="text/javascript">

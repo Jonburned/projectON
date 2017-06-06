@@ -86,7 +86,7 @@ class Category
      */
     public function setPage($page)
     {
-        $this->page = $page;
+        $this->page = $this->slugify($page);
     }
 
     /**
