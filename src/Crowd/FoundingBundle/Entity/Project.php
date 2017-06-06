@@ -26,7 +26,7 @@ class Project
     protected $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=20000)
      */
     protected $description;
 
@@ -51,7 +51,7 @@ class Project
     protected $minDonate;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $pathVideo;
 
@@ -111,7 +111,7 @@ class Project
     protected $users;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="projects")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="projects")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     protected $category;
@@ -479,6 +479,15 @@ class Project
         return $this->users;
     }
 
+    public function setCategory(\Crowd\FoundingBundle\Entity\Category $category)
+    {
+        $this->category = $category;
+    }
+
+    public function getCategory()
+    {
+        $this->category;
+    }
     public function transliterate($input)
     {
         $gost = array(

@@ -10,7 +10,7 @@ class PageController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $categories = $em->getRepository('CrowdFoundingBundle:Category')->findAll();
+        $categories = $em->getRepository('CrowdFoundingBundle:Category')->getAll();
 
         return $this->render('CrowdFoundingBundle:Page:index.html.twig', array('categories' => $categories));
     }

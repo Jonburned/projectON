@@ -31,7 +31,7 @@ class Photos
     protected $project;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="photos")
+     * @ORM\ManyToOne(targetEntity="Benefits", inversedBy="photos")
      * @ORM\JoinColumn(name="benefits_id", referencedColumnName="id")
      */
     protected $benefits;
