@@ -11,8 +11,13 @@ class PageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository('CrowdFoundingBundle:Category')->getAll();
+        $amountProjects = 0;
+        foreach ($categories as $category)
+        {
+            $amountProjects += count($category->getProjects());
+        }
 
-        return $this->render('CrowdFoundingBundle:Page:index.html.twig', array('categories' => $categories));
+        return $this->render('CrowdFoundingBundle:Page:index.html.twig', array('categories' => $categories, 'amountProjects' => $amountProjects));
     }
 
     public function categoryAction()
