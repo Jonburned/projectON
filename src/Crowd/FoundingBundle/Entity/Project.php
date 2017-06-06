@@ -76,6 +76,11 @@ class Project
     protected $slug;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $moderated;
+
+    /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="project")
      */
     protected $comments;
@@ -105,6 +110,11 @@ class Project
      */
     protected $users;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Project", inversedBy="projects")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
 
     public function __construct()
     {
@@ -117,6 +127,7 @@ class Project
 
         $this->setMinDonate(1);
         $this->setCurrentSum(0);
+        $this->setModerated(false);
         $this->setCreatedDate(new \DateTime());
         $this->setEndDate(new \DateTime());
     }
@@ -297,6 +308,16 @@ class Project
     public function setSlug($slug)
     {
         $this->slug = $this->slugify($slug);
+    }
+
+    public function setModerated($moderated)
+    {
+        $this->moderated = $moderated;
+    }
+
+    public function getModerated()
+    {
+        return $this->moderated;
     }
 
     /**

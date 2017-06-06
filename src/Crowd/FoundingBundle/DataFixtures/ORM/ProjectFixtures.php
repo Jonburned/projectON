@@ -10,10 +10,11 @@ class ProjectFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-
+        $project1 = new Project();
+        $project1->setName("Гартівня нащадків козацького роду");
     }
     public function getOrder()
     {
-
+        return 1;
     }
 }
