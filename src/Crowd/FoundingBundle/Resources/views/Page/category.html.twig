@@ -4,471 +4,54 @@
 {% endblock %}
 {%  block body %}
     <div class="container">
-        <div class="tabs-top">
+        <div class="categories">
             <ul>
-                <li class="tab_selected"><a href="#all">Всі категорії<span>16</span></a></li>
-                <li><a href="#economy">Економіка<span>16</span></a></li>
-                <li><a href="#literature">Література<span>16</span></a></li>
-                <li><a href="#music">Музика<span>16</span></a></li>
-                <li><a href="#video">Відео<span>16</span></a></li>
-                <li><a href="#internet">Інтернет<span>16</span></a></li>
-                <li><a href="#technology">Технології<span>16</span></a></li>
-                <li><a href="#health">Здоров'я<span>16</span></a></li>
-                <li><a href="#sport">Спорт<span>16</span></a></li>
-                <li><a href="#other">Інше<span>16</span></a></li>
+                {% if page == 'all' %}
+                    <li class="current"><a href="{{ path('crowd_founding_categorypage', {page: 'all'}) }}">Всі категорії<span>{{ amountProjects }}</span></a></li>
+                    {% for category in categories %}
+                        <li><a href="{{ path('crowd_founding_categorypage', {page: category.page}) }}">{{ category.name }}<span>{{ category.projects|length }}</span></a></li>
+                    {% endfor %}
+                {% else %}
+                        <li><a href="{{ path('crowd_founding_categorypage', {page: 'all'}) }}">Всі категорії<span>{{ amountProjects }}</span></a></li>
+                    {% set class = 'current' %}
+                    {% for category in categories %}
+                        {% if category.page != page %}
+                            <li><a href="{{ path('crowd_founding_categorypage', {page: category.page}) }}">{{ category.name }}<span>{{ category.projects|length }}</span></a></li>
+                        {% else %}
+                            <li class="{{ class }}"><a href="{{ path('crowd_founding_categorypage', {page: category.page}) }}">{{ category.name }}<span>{{ category.projects|length }}</span></a></li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </ul>
-            <div class="content_holder">
-                <div id="all">
-                    <ul class="thumbnail-projects">
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
+        </div>
+        <div class="categories-content">
+            <ul class="thumbnail-projects">
+                {% for project in projects %}
+                    <li class="col-sm-4">
+                        <div class="thumbnail thumbnail-project">
+                            <div class="project-caption">
+                                <img src="{{ asset(project.pathMainPhoto) }}" alt="">
+                                <h4>{{ project.name }}</h4>
                                 <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
+                                    {{ project.summary }}
                                 </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
                             </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
+                            <div class="thumb-info">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ project.currentSum }}" aria-valuemin="0" aria-valuemax="{{ project.neededSum }}" style="width:{{ project.currentSum / project.neededSum * 100 }}%">
+                                        {{ project.currentSum }}/{{ project.neededSum }}
                                     </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
                                 </div>
+                                <ul>
+                                    <li><p>&#8372;{{ project.currentSum }}</p><p>зібрано</p></li>
+                                    <li><p>{{ project.donates|length }}</p><p>доброчинців</p></li>
+                                    <li><p>{{ project.endDate|date() - project.createdDate|date() }} днів до</p><p>закінчення</p></li>
+                                </ul>
                             </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами кращі проекти.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>Завершено</p><p>22.05.2017</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;1.000.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>100 днів</p><p>залишилось</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами кращі проекти.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>Завершено</p><p>22.05.2017</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;1.000.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>100 днів</p><p>залишилось</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами кращі проекти.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>7 днів до</p><p>закінчення</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;100.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>Завершено</p><p>22.05.2017</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="col-sm-4">
-                            <div class="thumbnail thumbnail-project">
-                                <img src="images/photo.png" alt="">
-                                <h4>Гартівня нащадків козацького роду</h4>
-                                <p>
-                                    Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                                    Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                                    Стань співзасновником добрих справ - підтримай коштами.
-                                </p>
-                                <div class="thumb-info">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100000" aria-valuemin="0" aria-valuemax="120000" style="width:83.3%">
-                                            100.000/120.000
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li><p>&#8372;1.000.000</p><p>зібрано</p></li>
-                                        <li><p>532</p><p>доброчинців</p></li>
-                                        <li><p>100 днів</p><p>залишилось</p></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div id="economy">
-                    <p>Some content tab 1.</p>
-                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект.
-                        Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше.
-                        Стань співзасновником добрих справ - підтримай коштами.</p>
-                </div>
-                <div id="literature">
-                    Some content tab 2
-                    <p>Твій вклад в розвиток сильного і відкритого суспільства, де ти можеш зібрати гроші на проект. Знайди стартовий капітал для соціального бізнесу, гроші на розробку винаходу, зйомку фільма та інше. Стань співзасновником добрих справ - підтримай коштами.</p>
-                </div>
-                <div id="music">
-                    Some content tab 3
-                </div>
-                <div id="video">
-                    Some content tab 4
-                </div>
-                <div id="internet">
-                    Some content tab 5
-                </div>
-                <div id="technology">
-                    Some content tab 6
-                </div>
-                <div id="health">
-                    Some content tab 7
-                </div>
-                <div id="sport">
-                    Some content tab 8
-                </div>
-                <div id="other">
-                    Some content tab 9
-                </div>
-            </div><!-- /.content_holder -->
-        </div><!-- /.tabs_holder -->
-        <script type="text/javascript">
-            $('.tabs-top').skinableTabs({
-                effect: 'simple_fade',
-                skin: 'skin9',
-                position: 'top'
-            });
-        </script>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock %}

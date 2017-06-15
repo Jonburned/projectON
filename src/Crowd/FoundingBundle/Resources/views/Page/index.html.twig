@@ -140,7 +140,7 @@
                         {% endfor %}
                     </ul>
                     <div class="col-lg-12 text-center mar-b-10">
-                        <a href="#" class="btn-more ">
+                        <a href="{{ path('crowd_founding_categorypage', {'page' : 'all'}) }}" class="btn-more">
                             Більше
                         </a>
                     </div>
@@ -176,7 +176,7 @@
                             {% endfor %}
                             </ul>
                             <div class="col-lg-12 text-center mar-b-10">
-                                <a href="#" class="btn-more ">
+                                <a href="{{ path('crowd_founding_categorypage', {'page' : category.page}) }}" class="btn-more ">
                                     Більше
                                 </a>
                             </div>
